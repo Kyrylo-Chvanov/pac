@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.31)
-project(proj)
+project(pac)
 
 set(CMAKE_CXX_STANDARD          17)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 set(CMAKE_CXX_EXTENSIONS        OFF)
 
-add_executable(${PROJECT_NAME} src/proj.cc)
+add_executable(${PROJECT_NAME} src/pac.cc src/engine/camera.cc)
 
 add_custom_target(run
   COMMAND ${PROJECT_NAME}
