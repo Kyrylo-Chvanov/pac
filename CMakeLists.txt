@@ -10,7 +10,7 @@ add_executable(${PROJECT_NAME} src/pac.cc src/engine/camera.cc)
 add_custom_target(run
   COMMAND ${PROJECT_NAME}
   DEPENDS ${PROJECT_NAME}
-  WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
+  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/../
 )
 
 # find_package(raylib)
