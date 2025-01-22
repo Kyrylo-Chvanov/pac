@@ -1,4 +1,6 @@
 ### Tasks
 
-* [ ] Resizable GUI
+* [X] Resizable GUI
 * [ ] Loading images
+* [ ] Loading scenes
+* [ ] Buttons
