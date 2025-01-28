@@ -33,5 +33,5 @@ std::unique_ptr<Scene> RManager::LoadScene(const Scenes scene) {
         break;
     }
   }
-  return std::make_unique<Scene>(Scene{GetBackground(scene)});
+  return std::make_unique<Scene>(Scene{scene, GetBackground(scene)});
 }
