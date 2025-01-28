@@ -1,6 +1,7 @@
 ### Tasks
 
 * [X] Resizable GUI
-* [ ] Loading images
-* [ ] Loading scenes
+* [X] Loading textures
+* [X] Loading scenes
 * [ ] Buttons
+* [ ] Change current scene
