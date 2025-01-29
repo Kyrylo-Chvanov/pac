@@ -6,7 +6,11 @@
 #include "raylib.h"
 #include "scene.hh"
 
-// Resource manager
+/**
+ * @brief Resource manager. 
+ *        Used for loading and controlling textures, music, etc.
+ * 
+ */
 class RManager {
  public:
   RManager() : backgrounds_{} {}

@@ -2,6 +2,10 @@
 
 #include <exception>
 
+/**
+ * @brief Throw this if RManager::LoadBackground fails
+ * 
+ */
 class ResourceLoadingException : public std::exception {
  public:
   ResourceLoadingException(const char *message) : message_{message} {}
