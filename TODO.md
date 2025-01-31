@@ -1,9 +1,12 @@
+# PAC
+
 ### Tasks
 
-* [X] Resizable GUI
+* [X] Resizable game
 * [X] Loading textures
 * [X] Loading scenes
-* [ ] Clickable objects
+* [X] Clickable objects (buttons and triggers)
 * [ ] Change current scene
 * [ ] Dialogues and descriptions
 * [ ] Main menu
+* [ ] Animated background

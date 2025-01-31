@@ -2,6 +2,8 @@
 
 #include "raylib.h"
 
+class SManager;
+
 enum Scenes { INIT = 0, Size };
 
 constexpr auto INIT_BG_PATH{"scenes/init/background.png"};
@@ -20,9 +22,9 @@ class Scene {
    */
   Scene(const Scenes scene, const Texture2D &background)
       : scene_{scene},
-        background_{background},
         bg_source_{0, 0, static_cast<float>(background.width),
-                   static_cast<float>(background.height)} {}
+                   static_cast<float>(background.height)},
+        background_{background} {}
   
   /**
    * @brief Draw scene to the screen 
@@ -32,6 +34,6 @@ class Scene {
 
  private:
   Scenes scene_;
-  const Texture2D &background_;
   Rectangle bg_source_;
+  const Texture2D &background_;
 };

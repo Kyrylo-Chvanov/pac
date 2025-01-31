@@ -10,6 +10,8 @@ add_executable(${PROJECT_NAME}
   src/engine/camera.cc
   src/engine/rmanager.cc
   src/engine/scene.cc
+  src/engine/game.cc
+  src/engine/smanager.cc
 )
 
 add_custom_target(run
