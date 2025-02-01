@@ -1,10 +1,8 @@
 #pragma once
 
 #include "raylib.h"
-#include "scene.hh"
 #include "rmanager.hh"
 #include "smanager.hh"
-#include "trigger.hh"
 
 /**
  * @brief Main game class
@@ -22,6 +20,5 @@ class Game {
   void Draw() const;
   Camera2D camera_;
   RManager resources_;
-  SManager current_scene_;
-  Trigger test_;
+  SManager scene_manager_;
 };

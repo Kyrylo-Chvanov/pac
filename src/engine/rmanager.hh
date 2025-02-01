@@ -12,14 +12,14 @@
  */
 class RManager {
  public:
-  RManager() : backgrounds_{} {}
+  RManager() : textures_{} {}
   ~RManager();
-  bool LoadBackground(const Scenes scene, const char *path);
-  bool BackgroundLoaded(const Scenes scene) {
-    return backgrounds_[scene].id > 0;
+  bool LoadTexture(const Scenes scene, const char *path);
+  bool TextureLoaded(const Scenes scene) {
+    return textures_[scene].id > 0;
   }
-  const Texture2D & GetBackground(const Scenes scene) const;
+  const Texture2D & GetTexture(const Scenes scene) const;
 
  private:
-  std::array<Texture2D, Size> backgrounds_;
+  std::array<Texture2D, SIZE> textures_;
 };

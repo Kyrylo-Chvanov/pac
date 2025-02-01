@@ -11,12 +11,11 @@
  * @param fps 
  */
 Game::Game(const int width, const int height, const char *title, const int fps)
-    : camera_{}, resources_{}, current_scene_{resources_}, test_{Rectangle{0, 0, 40, 40}, camera_} {
+    : camera_{}, resources_{}, scene_manager_{resources_, camera_} {
   SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT);
   InitWindow(width, height, title);
   SetWindowMinSize(GAME_WIDTH / 2, GAME_HEIGHT / 2);
   SetTargetFPS(fps);
-  current_scene_.ChangeScene(INIT);
 }
 
 /**
@@ -24,6 +23,7 @@ Game::Game(const int width, const int height, const char *title, const int fps)
  * 
  */
 void Game::Run() {
+  scene_manager_.ChangeScene(INIT);
   while (!WindowShouldClose()) {
     Update();
     Draw();
@@ -39,8 +39,7 @@ void Game::Draw() const {
   ClearBackground(BLACK);
   BeginMode2D(camera_);
   DrawRectangleRec(GAME_RECT, WHITE);
-  current_scene_.Draw();
-  test_.Draw();
+  scene_manager_.Draw();
   EndMode2D();
   DrawFPS(0, 0);
   EndDrawing();
@@ -52,4 +51,5 @@ void Game::Draw() const {
  */
 void Game::Update() { 
   UpdateCamera(camera_);
+  scene_manager_.Update();
 }
