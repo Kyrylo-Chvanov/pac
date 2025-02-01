@@ -1,7 +1,8 @@
-#include "engine/exception.hh"
-#include "engine/global.hh"
-#include "engine/game.hh"
 #include <iostream>
+
+#include "engine/exception.hh"
+#include "engine/game.hh"
+#include "engine/global.hh"
 
 int main() {
   Game game{GAME_WIDTH, GAME_HEIGHT, "pac"};

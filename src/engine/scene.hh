@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+
 #include "raylib.h"
 #include "trigger.hh"
 
@@ -10,15 +11,15 @@ using Exits = std::vector<std::pair<Trigger, Scenes>>;
 
 /**
  * @brief Scene class that holds references to objects from RManager.
- * 
+ *
  */
 class Scene {
  public:
   /**
    * @brief Construct a new Scene object
-   * 
-   * @param scene 
-   * @param background 
+   *
+   * @param scene
+   * @param background
    */
   Scene(const Scenes scene, const Texture2D &background, const Exits &exits)
       : scene_{scene},
@@ -26,10 +27,10 @@ class Scene {
                    static_cast<float>(background.height)},
         exits_{exits},
         background_{background} {}
-  
+
   /**
-   * @brief Draw scene to the screen 
-   * 
+   * @brief Draw scene to the screen
+   *
    */
   void Draw() const;
 
@@ -37,15 +38,15 @@ class Scene {
    * @brief Check if player tries to exit the current scene
    *        and return the next scene.
    *        Return Scenes::SIZE otherwise.
-   *        
-   * 
-   * @return Scenes 
+   *
+   *
+   * @return Scenes
    */
   Scenes GetNextSceneIfReady() const;
 
  private:
-  Scenes scene_; // current scene
+  Scenes scene_;  // current scene
   Rectangle bg_source_;
-  Exits exits_; // exits to other scenes
+  Exits exits_;  // exits to other scenes
   const Texture2D &background_;
 };

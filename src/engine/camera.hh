@@ -5,7 +5,7 @@
 /**
  * @brief Update camera's zoom and offset.
  *        Used for window shrinking and enlarging.
- * 
- * @param camera 
+ *
+ * @param camera
  */
 void UpdateCamera(Camera2D &camera);

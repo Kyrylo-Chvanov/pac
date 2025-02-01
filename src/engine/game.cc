@@ -1,14 +1,15 @@
 #include "game.hh"
-#include "global.hh"
+
 #include "camera.hh"
+#include "global.hh"
 
 /**
  * @brief Construct a new Game::Game object
- * 
- * @param width 
- * @param height 
- * @param title 
- * @param fps 
+ *
+ * @param width
+ * @param height
+ * @param title
+ * @param fps
  */
 Game::Game(const int width, const int height, const char *title, const int fps)
     : camera_{}, resources_{}, scene_manager_{resources_, camera_} {
@@ -20,7 +21,7 @@ Game::Game(const int width, const int height, const char *title, const int fps)
 
 /**
  * @brief Execute the main loop of the game.
- * 
+ *
  */
 void Game::Run() {
   scene_manager_.ChangeScene(INIT);
@@ -31,8 +32,8 @@ void Game::Run() {
 }
 
 /**
- * @brief Draw the game 
- * 
+ * @brief Draw the game
+ *
  */
 void Game::Draw() const {
   BeginDrawing();
@@ -46,10 +47,10 @@ void Game::Draw() const {
 }
 
 /**
- * @brief Update the game's state 
- * 
+ * @brief Update the game's state
+ *
  */
-void Game::Update() { 
+void Game::Update() {
   UpdateCamera(camera_);
   scene_manager_.Update();
 }

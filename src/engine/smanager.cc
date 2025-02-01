@@ -1,15 +1,18 @@
-#include <utility>
 #include "smanager.hh"
+
+#include <utility>
+
 #include "exception.hh"
 #include "raylib.h"
 #include "scene.hh"
 #include "trigger.hh"
 
 void SManager::ChangeScene(const Scenes scene) {
-  current_scene_ = std::make_unique<Scene>(Scene{scene, GetSceneBackground(scene), GetSceneExits(scene)});
+  current_scene_ = std::make_unique<Scene>(
+      Scene{scene, GetSceneBackground(scene), GetSceneExits(scene)});
 }
 
-const Texture2D & SManager::GetSceneBackground(const Scenes scene) {
+const Texture2D& SManager::GetSceneBackground(const Scenes scene) {
   if (!resources_.TextureLoaded(scene)) {
     switch (scene) {
       case INIT:
@@ -24,7 +27,7 @@ const Texture2D & SManager::GetSceneBackground(const Scenes scene) {
         break;
       case SIZE:
         break;
-      }
+    }
   }
   return resources_.GetTexture(scene);
 }
@@ -33,10 +36,12 @@ const Exits SManager::GetSceneExits(const Scenes scene) {
   Exits exits;
   switch (scene) {
     case INIT:
-      exits.emplace_back(std::make_pair(Trigger{Rectangle{0, 0, 50, 50}, camera_}, WHAT));
+      exits.emplace_back(
+          std::make_pair(Trigger{Rectangle{0, 0, 50, 50}, camera_}, WHAT));
       break;
     case WHAT:
-      exits.emplace_back(std::make_pair(Trigger{Rectangle{0, 0, 50, 50}, camera_}, INIT));
+      exits.emplace_back(
+          std::make_pair(Trigger{Rectangle{0, 0, 50, 50}, camera_}, INIT));
       break;
     case SIZE:
       break;

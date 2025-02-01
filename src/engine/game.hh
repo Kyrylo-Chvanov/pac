@@ -6,7 +6,7 @@
 
 /**
  * @brief Main game class
- * 
+ *
  */
 class Game {
  public:
